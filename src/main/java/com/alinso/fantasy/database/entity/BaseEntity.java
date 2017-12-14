@@ -19,7 +19,7 @@ public class BaseEntity implements Serializable {
             strategy = "uuid"
     )
     @GeneratedValue(generator = "system-uuid")
-    @Column(name ="id", length = 32)
+    @Column(name = "id", length = 32)
     String id;
 
     public String getId() {

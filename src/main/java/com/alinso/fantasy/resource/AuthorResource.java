@@ -1,6 +1,6 @@
 package com.alinso.fantasy.resource;
 
-import com.alinso.fantasy.database.dao.GenericDAO;
+import com.alinso.fantasy.database.dao.AuthorDAO;
 import com.alinso.fantasy.database.entity.Author;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 public class AuthorResource {
 
     @Autowired
-    GenericDAO<Author> authorDao;
+    AuthorDAO authorDao;
 
 
     public String addAuthor(){

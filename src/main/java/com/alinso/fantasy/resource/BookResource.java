@@ -1,6 +1,7 @@
 package com.alinso.fantasy.resource;
 
-import com.alinso.fantasy.database.dao.GenericDAO;
+import com.alinso.fantasy.database.dao.AuthorDAO;
+import com.alinso.fantasy.database.dao.BookDAO;
 import com.alinso.fantasy.database.entity.Author;
 import com.alinso.fantasy.database.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,13 @@ import java.util.List;
 @Controller
 public class BookResource {
 
+
+
     @Autowired
-    GenericDAO< Book > bookDao;
+    BookDAO bookDao;
+
     @Autowired
-    GenericDAO<Author> authorDao;
+    AuthorDAO authorDao;
 
 
 
@@ -55,6 +59,11 @@ public class BookResource {
 
 
         authorDao.saveOrUpdate(a);
+
+    }
+
+    public List<Book> getBooksByPrice(Double price, String where){
+        return bookDao.getBooksByPrice(price,where);
 
     }
 

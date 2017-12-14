@@ -41,4 +41,9 @@ public class Book extends BaseEntity {
     public void setAuthor(Author author) {
         this.author = author;
     }
+
+    @Override
+    public String toString() {
+        return this.bookName+", "+this.price+", "+this.author.getAuthorName();
+    }
 }
